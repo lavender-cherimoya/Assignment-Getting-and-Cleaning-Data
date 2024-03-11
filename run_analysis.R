@@ -1,21 +1,20 @@
 # Load the needed packages
 library(dplyr)
+library(data.table)
 
 # A) Load the data from the url if the data folder does not already exist in the
 # correct folder
 data_folder_name <- "UCI_Har_Dataset.zip"
-path <- "./R_Programming/FourthCourseraAssignement"
-filepath_data <- file.path(path, data_folder_name)
-file_data_unzip <- file.path(path, "UCI HAR Dataset")
+file_data_unzip <- "UCI HAR Dataset"
 
-if (!file.exists(filepath_data)){
+if (!file.exists(data_folder_name)){
       data_url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-      download.file(data_url, filepath_data, method="curl")
+      download.file(data_url, data_folder_name, method="curl")
 }
 
 # Unzips the data file if it is not already the case
 if (!file.exists(file_data_unzip)) {
-      unzip(filepath_data, exdir = path)
+      unzip(data_folder_name)
 }
 
 # B) Accessing and saving the relevant data in dataframes
@@ -74,5 +73,5 @@ names(sub_data)<-gsub("Z", "ZComponent", names(sub_data))
 final_data_average <- sub_data %>% group_by(Subject, Activity) %>% summarise_all(mean)
 
 # Save it in a txt file and drop the index of the row
-write.table(final_data_average, file.path(path, "FinalDataAverage.txt"), row.name=FALSE)
+write.table(final_data_average, "FinalDataAverage.txt", row.name=FALSE)
 
