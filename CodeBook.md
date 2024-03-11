@@ -2,7 +2,7 @@ The goal of the `run_analysis.R` script is to create a tidy dataset of the UCI H
 
 A.  **Loading the raw UCI HAR Dataset**
 
-    If the raw data set is not already present in the working directory, the script downloads the data from the given URL: <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
+If the raw data set is not already present in the working directory, the script downloads the data from the given URL: <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
 
 B.  **Accessing the relevant raw data stored in `.txt` files and saving them into data tables**
 
@@ -20,7 +20,7 @@ B.  **Accessing the relevant raw data stored in `.txt` files and saving them int
 
 C.  **Merging the data together into one unique data table**
 
-    First, two separate data tables are created, one for the train set and another for the test set. The final merged data set is created by merging the two previous ones.
+First, two separate data tables are created, one for the train set and another for the test set. The final merged data set is created by merging the two previous ones.
 
     -   `test_set` : Data table of size (2947, 563). Created by merging `X_test`, `y_test` and `subject_test` with `cbound()`.
 
@@ -30,7 +30,7 @@ C.  **Merging the data together into one unique data table**
 
 D.  **Selecting specific features from merged_data**
 
-    Only the features containing specific strings in their name are kept in the new tidy dataset.
+Only the features containing specific strings in their name are kept in the new tidy dataset.
 
     -   `var_keep` : chr list of size (1, 2). Contains the strings to look up for in the features names of merged_data. In this case, only the mean and standard deviation of the measurements are wanted. As per the the `features_info.txt` file that comes with the dataset, those features have `"mean()"` and `"std()"` in their name.
 
@@ -38,7 +38,7 @@ D.  **Selecting specific features from merged_data**
 
 E.  **Changing the activity names to be more descriptive**
 
-    The values in the `integer_label` column in `sub_data` are replaced with the corresponding activity names saved in the second column of `activity_labels`. The column is renamed `Activity` (instead of `integer_label`).
+The values in the `integer_label` column in `sub_data` are replaced with the corresponding activity names saved in the second column of `activity_labels`. The column is renamed `Activity` (instead of `integer_label`).
 
 F.  **Changing the feature column names to be more descriptive**
 
@@ -72,7 +72,7 @@ F.  **Changing the feature column names to be more descriptive**
 
 G.  **Creating a separate dataset containing the average of each feature per activity and subject**
 
-    From `sub_data`, a second independent tidy dataset is created which contains the average of each feature for each activity and each subject. This new dataset is then saved as a `.txt` file.
+From `sub_data`, a second independent tidy dataset is created which contains the average of each feature for each activity and each subject. This new dataset is then saved as a `.txt` file.
 
     -   `final_data_average` : Data table of size (180, 68). Contains the average of every feature in `sub_data`, per activity and per subject.
 
