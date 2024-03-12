@@ -6,7 +6,7 @@ If the raw data set is not already present in the working directory, the script 
 
 #### **B) Accessing the relevant raw data stored in `.txt` files and saving them into data tables**
 
-[For the test data (30% of the whole dataset) :]{.underline}
+For the test data (30% of the whole dataset) :
 
 -   `X_test` (from `./test/X_test.txt`) : Data table of size (2947, 561). Contains the 561 different features for each of the 2947 samples in the test set. The features include 3-axial linear acceleration and 3-axial angular velocity measurements, taken with the help of the accelerometer and gyroscope of a smartphone. The column names for the features are set and taken from `features$variables`.
 
@@ -14,7 +14,7 @@ If the raw data set is not already present in the working directory, the script 
 
 -   `subject_test` (from `./test/subject_test.txt`) : Data table of size (2947, 1). Contains the subject label for each of the 2947 samples in the test set. The total group of subjects is made of 30 volunteers.
 
-[For the training data (70% of the whole dataset) :]{.underline}
+For the training data (70% of the whole dataset) :
 
 -   `X_train` (from `./train/X_train.txt`) : Data table of size (7352, 561). Contains the 561 features for each of the 7352 samples in the train set. The column names for the features are set and taken from `features$variables`.
 
@@ -22,7 +22,7 @@ If the raw data set is not already present in the working directory, the script 
 
 -   `subject_train` (from `./train/subject_train.txt`) : Data table of size (7352, 1). Contains the subject label for each of 7352 samples in the train set.
 
-[For other data :]{.underline}
+For the other data :
 
 -   `features` (from `./features.txt`) : Data table of size (561, 2). Contains the list of names of the 561 different features measured for each sample and their corresponding index.
 
