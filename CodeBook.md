@@ -28,24 +28,29 @@ If the raw data set is not already present in the working directory, the script 
 
 -   `activity_labels` (from `./activity_labels.txt`) : Data table of size (6, 2). Contains the name list of activities performed when taking the measurements and their corresponding integer label. There are a total of 6 different activities.
 
-C.  **Merging the data together into one unique data table**
+#### **C) Merging the data together into one unique data table**
 
 First, two separate data tables are created, one for the train set and another for the test set. The final merged data set is created by merging the two previous ones.
 
-1.  \`test_set\` : Data table of size (2947, 563). Created by merging \`X_test\`, \`y_test\` and \`subject_test\` with \`cbound()\`. \`train_set\` : Data table of size (7352, 563). Created by merging \`X_train\`, \`y_train\` and \`subject_train\` with \`cbound()\`. \`merged_data\` : Data table of size (10299, 563). Created by merging \`test_set\` and \`train_set\` with \`rbound()\`.
+-   `test_set` : Data table of size (2947, 563). Created by merging `X_test`, `y_test` and `subject_test` with `cbound()`.
 
-2.  **Selecting specific features from merged_data**
+-   `train_set` : Data table of size (7352, 563). Created by merging `X_train`, `y_train` and `subject_train` with `cbound()`.
 
-    Only the features containing specific strings in their name are kept in the new tidy dataset.
+-   `merged_data` : Data table of size (10299, 563). Created by merging `test_set` and `train_set` with `rbound()`.
 
-    -   `var_keep` : chr list of size (1, 2). Contains the strings to look up for in the features names of `merged_data`. In this case, only the mean and standard deviation of the measurements are wanted. As per the the `features_info.txt` file that comes with the dataset, those features have `"mean()"` and `"std()"` in their name.
-    -   `sub_data` : Data table of size (10299, 68). Tidy data table that contains the `Subject`, `integer_label` and the feature columns kept after filtering out their names (i.e. only keeping the mean and standard deviation of the measurements).
+#### **D) Selecting specific features from `merged_data`**
 
-3.  **Changing the activity names to be more descriptive**
+Only the features containing specific strings in their name are kept in the new tidy dataset.
+
+-   `var_keep` : chr list of size (1, 2). Contains the strings to look up for in the features names of `merged_data`. In this case, only the mean and standard deviation of the measurements are wanted. As per the the `features_info.txt` file that comes with the dataset, those features have `"mean()"` and `"std()"` in their name.
+
+-   `sub_data` : Data table of size (10299, 68). Tidy data table that contains the `Subject`, `integer_label` and the feature columns kept after filtering out their names (i.e. only keeping the mean and standard deviation of the measurements).
+
+#### **E) Changing the activity names to be more descriptive**
 
 The values in the `integer_label` column in `sub_data` are replaced with the corresponding activity names saved in the second column of `activity_labels`. The column is renamed `Activity` (instead of `integer_label`).
 
-F.  **Changing the feature column names to be more descriptive**
+#### **F) Changing the feature column names to be more descriptive**
 
 Some strings in the feature column names in `sub_data` are replaced with fuller descriptive strings to make the column names more explanatory.
 
@@ -75,7 +80,7 @@ Some strings in the feature column names in `sub_data` are replaced with fuller 
 
 13. Any `Z` is replaced by `ZComponent`.
 
-14. **Creating a separate dataset containing the average of each feature per activity and subject**
+#### **G) Creating a separate dataset containing the average of each feature per activity and subject**
 
 From `sub_data`, a second independent tidy dataset is created which contains the average of each feature for each activity and each subject. This new dataset is then saved as a `.txt` file.
 
