@@ -1,8 +1,8 @@
 The goal of the `run_analysis.R` script is to create a tidy dataset of the UCI HAR Dataset. It performs the following steps:
 
-A.  **Loading the raw UCI HAR Dataset**
+A.  **Loading the raw UCI HAR Dataset** 
 
-    If the raw data set is not already present in the working directory, the script downloads the data from the given URL: <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
+If the raw data set is not already present in the working directory, the script downloads the data from the given URL: <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
 
 B.  **Accessing the relevant raw data stored in `.txt` files and saving them into data tables**
 
@@ -26,9 +26,8 @@ C.  **Merging the data together into one unique data table**
     -   `train_set` : Data table of size (7352, 563). Created by merging `X_train`, `y_train` and `subject_train` with `cbound()`.
     -   `merged_data` : Data table of size (10299, 563). Created by merging `test_set` and `train_set` with `rbound()`.
 
-```{=html}
 <!-- -->
-```
+
 D.  **Selecting specific features from merged_data**
 
     Only the features containing specific strings in their name are kept in the new tidy dataset.
