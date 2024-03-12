@@ -2,8 +2,7 @@
 library(dplyr)
 library(data.table)
 
-# A) Load the data from the url if the data folder does not already exist in the
-# correct folder
+# A) Load the data from the url if the data folder does not already exist in the correct folder
 data_folder_name <- "UCI_Har_Dataset.zip"
 file_data_unzip <- "UCI HAR Dataset"
 
