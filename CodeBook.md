@@ -1,10 +1,10 @@
 The goal of the `run_analysis.R` script is to create a tidy dataset of the UCI HAR Dataset. It performs the following steps:
 
-#### **A) Loading the raw UCI HAR Dataset**
+#### [**A) Loading the raw UCI HAR Dataset**]{.underline}
 
 If the raw data set is not already present in the working directory, the script downloads the data from the given URL: <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>
 
-#### **B) Accessing the relevant raw data stored in `.txt` files and saving them into data tables**
+#### [**B) Accessing the relevant raw data stored in `.txt` files and saving them into data tables**]{.underline}
 
 For the test data (30% of the whole dataset) :
 
@@ -28,7 +28,7 @@ For the other data :
 
 -   `activity_labels` (from `./activity_labels.txt`) : Data table of size (6, 2). Contains the name list of activities performed when taking the measurements and their corresponding integer label. There are a total of 6 different activities.
 
-#### **C) Merging the data together into one unique data table**
+#### [**C) Merging the data together into one unique data table**]{.underline}
 
 First, two separate data tables are created, one for the train set and another for the test set. The final merged data set is created by merging the two previous ones.
 
@@ -38,7 +38,7 @@ First, two separate data tables are created, one for the train set and another f
 
 -   `merged_data` : Data table of size (10299, 563). Created by merging `test_set` and `train_set` with `rbound()`.
 
-#### **D) Selecting specific features from `merged_data`**
+#### [**D) Selecting specific features from `merged_data`**]{.underline}
 
 Only the features containing specific strings in their name are kept in the new tidy dataset.
 
@@ -46,11 +46,11 @@ Only the features containing specific strings in their name are kept in the new 
 
 -   `sub_data` : Data table of size (10299, 68). Tidy data table that contains the `Subject`, `integer_label` and the feature columns kept after filtering out their names (i.e. only keeping the mean and standard deviation of the measurements).
 
-#### **E) Changing the activity names to be more descriptive**
+#### [**E) Changing the activity names to be more descriptive**]{.underline}
 
 The values in the `integer_label` column in `sub_data` are replaced with the corresponding activity names saved in the second column of `activity_labels`. The column is renamed `Activity` (instead of `integer_label`).
 
-#### **F) Changing the feature column names to be more descriptive**
+#### [**F) Changing the feature column names to be more descriptive**]{.underline}
 
 Some strings in the feature column names in `sub_data` are replaced with fuller descriptive strings to make the column names more explanatory.
 
@@ -80,7 +80,7 @@ Some strings in the feature column names in `sub_data` are replaced with fuller 
 
 13. Any `Z` is replaced by `ZComponent`.
 
-#### **G) Creating a separate dataset containing the average of each feature per activity and subject**
+#### [**G) Creating a separate dataset containing the average of each feature per activity and subject**]{.underline}
 
 From `sub_data`, a second independent tidy dataset is created which contains the average of each feature for each activity and each subject. This new dataset is then saved as a `.txt` file.
 
