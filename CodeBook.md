@@ -86,4 +86,4 @@ From `sub_data`, a second independent tidy dataset is created which contains the
 
 -   `final_data_average` : Data table of size (180, 68). Contains the average of every feature in `sub_data`, per activity and per subject.
 
--   `FinalDataAverage.txt` : Final `.txt` file in which the `final_data` tidy dataset is saved in the working directory.
+-   `FinalTidyDatasetAverage.txt` : Final `.txt` file in which the `final_data` tidy dataset is saved in the working directory.

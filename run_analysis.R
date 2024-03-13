@@ -72,5 +72,5 @@ names(sub_data)<-gsub("Z", "ZComponent", names(sub_data))
 final_data_average <- sub_data %>% group_by(Subject, Activity) %>% summarise_all(mean)
 
 # Save it in a txt file and drop the index of the row
-write.table(final_data_average, "FinalDataAverage.txt", row.name=FALSE)
+write.table(final_data_average, "FinalTidyDatasetAverage.txt", sep = ' ', row.name=FALSE)
 

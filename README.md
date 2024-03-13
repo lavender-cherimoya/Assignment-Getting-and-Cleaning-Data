@@ -14,6 +14,6 @@ This GitHub repository contains the following files:
 
 -   `run_analysis.R` : The R script which contains the code that imports the UCI HAR Dataset and prepares a tidy data set from it, that can then be used for later analysis.
 
--   `FinalDataAverage.txt` : The `.txt` file in which the output of the `run_analysis.R` script is saved, containing the final tidy dataset.
+-   `FinalTidyDatasetAverage.txt` : The `.txt` file in which the output of the `run_analysis.R` script is saved, containing the final tidy dataset.
 
--   `CobeBook.md` : This code book describes in more detail the different variables encountered in `run_analysis.R`, as well as the steps and transformations performed to clean the UCI HAR Dataset into the tidy dataset `FinalDataAverage.txt`.
+-   `CobeBook.md` : This code book describes in more detail the different variables encountered in `run_analysis.R`, as well as the steps and transformations performed to clean the UCI HAR Dataset into the tidy dataset `FinalTidyDatasetAverage.txt`.
