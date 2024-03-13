@@ -42,7 +42,7 @@ First, two separate data tables are created, one for the train set and another f
 
 Only the features containing specific strings in their name are kept in the new tidy dataset.
 
--   `var_keep` : chr list of size (1, 2). Contains the strings to look up for in the features names of `merged_data`. In this case, only the mean and standard deviation of the measurements are wanted. As per the the `features_info.txt` file that comes with the dataset, those features have `"mean()"` and `"std()"` in their name.
+-   `var_keep` : chr list of size (1, 2). Contains the strings to look up for in the features names of `merged_data`. In this case, only the mean and standard deviation of the measurements from the original dataset are needed. As per the the `features_info.txt` file that comes with the dataset, those features have `"mean()"` and `"std()"` in their name.
 
 -   `sub_data` : Data table of size (10299, 68). Tidy data table that contains the `Subject`, `integer_label` and the feature columns kept after filtering out their names (i.e. only keeping the mean and standard deviation of the measurements).
 
